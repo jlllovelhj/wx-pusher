@@ -55,6 +55,7 @@ public class WxSubscriber implements Subscriber {
             // 发送
             wxMpService.getTemplateMsgService().sendTemplateMsg(wxMpTemplateMessage);
         } catch (Exception e) {
+            e.printStackTrace();
             log.error(">>> 给[{}]推送{}策略失败", identityInfo.getOpenId(), wxTemplateType.getTemplateDescription());
             log.error(e.getMessage());
         }
